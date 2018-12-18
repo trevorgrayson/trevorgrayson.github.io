@@ -15,7 +15,8 @@
 		document.getElementsByName("rate")[0].value = r;
 
 		function saveValues() {
-			document.cookie = principal + ":" + rate;
+			document.cookie = document.getElementsByName("principal")[0].value +
+				":" + document.getElementsByName("rate")[0].value;
 		}
 
 		document.getElementsByName("principal")[0].onchange = saveValues;
