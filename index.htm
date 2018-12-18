@@ -1,8 +1,25 @@
 <html>
 	<body>
 		<form>
-			<input name="principal"/>
+			<input name="principal" />
 			<input name="rate" />
-		</form>>
+			<input type="submit" value="Calculate" />
+		</form>
 	</body>
+	<script>
+		var values = document.cookie.split(":");
+		var p = values[0];
+		var r = values[1];
+
+		document.getElementsByName("principal")[0].value = p;
+		document.getElementsByName("rate")[0].value = r;
+
+		function saveValues() {
+			document.cookie = principal + ":" + rate;
+		}
+
+		document.getElementsByName("principal")[0].onchange = saveValues;
+		document.getElementsByName("rate")[0].onchange = saveValues;
+
+	</script>
 </html>
